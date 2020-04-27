@@ -1,0 +1,52 @@
+<playercorefactory>
+ <players>
+
+   <player name="save url" type="ExternalPlayer" audio="true" video="true">
+  <filename>printf</filename>
+     <args>"%s\n" "{0}" > "$HOME/url-$(date +"%Y-%m-%d-%H-%M-%S").txt"</args>
+     <hidexbmc>false</hidexbmc>
+   </player>
+
+   <player name="record video" type="ExternalPlayer" audio="false" video="true">
+  <filename>"$HOME/videotools/bin/record.py"</filename>
+     <args>"{0}" &</args>
+     <hidexbmc>false</hidexbmc>
+   </player>  
+
+
+
+  </players>
+ <rules action="overwrite">
+   <rule protocols="nfs|smb" player="dvdplayer"></rule>
+   <!-- change the default player below -->
+
+   <!-- uncomment to make play the default player
+    <rule video="true" player="play"></rule>
+   -->
+   
+   <!-- uncomment to make record the default player
+    <rule video="true" player="record"></rule>
+   -->
+   
+ </rules>
+
+</playercorefactory>
+
+
+<!-- 
+
+   <player name="play" type="ExternalPlayer" audio="false" video="true">
+  <filename>"$HOME/.local/bin/pilferplay"</filename>
+     <args>-i "{0}"</args>
+     <hidexbmc>true</hidexbmc>
+   </player>  
+
+
+   <player name="record audio" type="ExternalPlayer" audio="true" video="true">
+  <filename>"$HOME/.local/bin/pilfer"</filename>
+     <args>-a "{0}" &</args>
+     <hidexbmc>false</hidexbmc>
+   </player>  
+
+
+ -->
